@@ -105,7 +105,7 @@
 /*************************/
 #point{
     height: 500px;
-    background: #cccccc;
+    background: #ccc;
     overflow: hidden;
 }
 #point h2,#point h4{
@@ -131,5 +131,132 @@
 }
 #point a:hover{
     color:#fff;
-    background: #0f0;
+    background: #93c47d;
+}
+/*****************************/
+#known{
+    height:330px;
+    background: #93c47d;
+}
+#known span{
+    display:inline-block;
+    width: 100px;
+    height: 35px;
+    line-height: 35px;
+    text-align:center;
+    margin: 20px 0;
+}
+#known #sp1{
+    background: #fff;
+    color: #666;
+    position: relative;
+    left:470px;
+}
+#known #sp2{
+    background: #F1C232;
+    color: #ffffff;
+    position:relative;
+    left:470px;
+}
+#known h2,#known h3,#known p{
+    color:white;
+    text-align: center;
+    width: 550px;
+    margin: 20px auto;
+}
+#known hr{
+    border-color: #ffffff;
+    width: 550px;
+    margin: 0 auto;
+}
+#known #know-us{
+    color:white;
+    border:1px solid white;
+    border-radius: 5px;
+    margin: 0 auto;
+    display:block;
+    width: 80px;
+}
+#known #know-us:hover{
+    border-color:black;
+    color:black;
+    background: #ffffff;
+}
+/***********************/
+#pro{
+    height: 373px;
+    background: #fee157;
+}
+#pro #problem{
+    width: 700px;
+    height:350px;
+    float: left;
+    position: relative;
+}
+#pro #register{
+    float: right;
+    width: 350px;
+}
+#pro h2{
+    width: 200px;
+    margin: 15px 0;
+}
+#pro #more{
+    position:absolute;
+    right:30px;
+    top:20px;
+    border-radius: 5px;
+}
+#pro #more:hover{
+    background: #ffffff;
+}
+#pro #nav{
+    margin-top: 45px;
+    width: 676px;
+    height: 210px;
+    border:1px dashed #657574;
+}
+#pro #nav li{
+    padding-left: 5px;
+    list-style: circle;
+    margin-left: 60px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+#pro #nav hr{
+    border-bottom:1px dashed #657574;
+    border-top:none;
+    width: 600px;
+    margin: 0 auto;
+}
+#register{
+    height: 350px;
+    width: 350px;
+}
+#register h2{
+    text-align: center;
+    width: 100%;
+}
+#register #info{
+    height: 300px;
+    width: 350px;
+    border:1px dashed #657574;
+}
+#register #info p{
+    width:23%;
+    margin: 10px auto;
+    text-align: center;
+}
+#register #info .star{
+    color:red;
+    margin-top: -4px;
+    float: right;
+}
+#register #info .long{
+    display:block;
+    width: 80%;
+    margin: 0 auto;
+    height:28px;
+    font-size: 20px;
+    text-indent:10px;
 }
