@@ -2,8 +2,9 @@
     width: 250px;
     height: 285px;
     border:1px solid #000;
-    margin: 200px auto;
     position:relative;
+    top:100px;
+    margin: 0 auto;
     overflow: hidden;
 }
 #picture img{
@@ -60,3 +61,46 @@
 #num .sco{
     background: #66ccff;
 }
+#nav{
+    width: 100px;
+    height: 159px;
+    border-top:1px solid #000;
+    border-left:1px solid #000;
+    border-right:1px solid #000;
+    display: none;
+    background: #cccccc;
+    position: absolute;
+    top:0;
+    left:0;
+}
+#nav li{
+    width: 100px;
+    height: 39px;
+    border-bottom: 1px solid #000;
+    text-align: center;
+    line-height: 39px;
+    cursor: pointer;
+}
+#nav li:hover{
+    background: #6cf;
+    font-size: large;
+    color:#ff0000;
+    font-weight: bolder;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
