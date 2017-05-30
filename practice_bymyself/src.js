@@ -30,7 +30,7 @@ function start(t1,t2,stop){
                 clearInterval(timer2);
                 clearTimeout(timer1);
                 j++;
-                if(j==1){
+                if(j<=2){
                     start(T1[j],T2[j],Stop[j]);
                 }
                 else{
@@ -40,9 +40,9 @@ function start(t1,t2,stop){
         },t2);
     },t1);
 }
-var T1=[32000,21000,21000];
-var T2=[2826,3142,3142];
-var Stop=[28,50,60];
+var T1=[32000,21000,8000];
+var T2=[2826,3142,3400];
+var Stop=[28,50,61];
    start(T1[j],T2[j],Stop[j]);
 
 
