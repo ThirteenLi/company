@@ -13,7 +13,7 @@ function cut(i){
     for(var j=-4;j<=4;j++){
         aLi[i+j].className="selected";
     }
-    aLi[i].className="selected now";
+   aLi[i].className="selected now";
 }
 var timer;
 function play(n){
