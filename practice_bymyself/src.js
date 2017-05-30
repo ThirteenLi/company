@@ -3,7 +3,6 @@
  */
 var oIrc=document.getElementById("irc");
 var aLi=oIrc.getElementsByTagName("li");
-var i=3;
 console.log(oIrc);
 console.log(aLi);
 //i:4-60
@@ -16,18 +15,34 @@ function play(i){
     }
     aLi[i].className="selected now";
 }
-var timer2=setTimeout(function(){
-    i++;
-    console.log(i);
-    start();
-},35000);
-var timer;
-function start(){
-    timer=setInterval(function(){
-        i++;
-        if(i==60){
-            clearInterval(timer);
-        }
-        play(i);
-    },3600);
+var timer1;
+var timer2;
+var i=4;
+var j=0;
+function start(t1,t2,stop){
+    timer1=setTimeout(function(){
+        console.log(i);
+        timer2=setInterval(function(){
+            play(i);
+            console.log(i);
+            i++;
+            if(i==stop){
+                clearInterval(timer2);
+                clearTimeout(timer1);
+                j++;
+                if(j==1){
+                    start(T1[j],T2[j],Stop[j]);
+                }
+                else{
+                    console.log("j="+j);
+                }
+            }
+        },t2);
+    },t1);
 }
+var T1=[32000,21000,21000];
+var T2=[2826,3142,3142];
+var Stop=[28,50,60];
+   start(T1[j],T2[j],Stop[j]);
+
+
