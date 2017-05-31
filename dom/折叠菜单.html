@@ -61,8 +61,8 @@
 
 		function next(elem){
 			do{
-				elem = elem.nextSibling;
-			}while(elem && elem.nodeType != 1);
+				elem = elem.nextSibling;//元素兄弟
+			}while(elem && elem.nodeType != 1); //元素节点返回值1 文本节点返回值3
 			return elem;
 		}
 
