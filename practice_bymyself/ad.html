@@ -1,14 +1,81 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>MUSIC</title>
-    <link rel="shortcut icon" href="sucai/favicon.ico"/>
-    <style>
-
-    </style>
-</head>
-<body>
-<embed  src="sucai/xxxHOLIC.mp3" />
-</body>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>MUSIC</title>
+        <link rel="shortcut icon" href="sucai/favicon.ico"/>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            li{
+                list-style: none;
+            }
+            body{
+                user-select: none;
+            }
+            #container{
+                width: 190px;
+                border: 1px solid #000000;
+            }
+            #container h3{
+                background: #000;
+                color:white;
+                cursor:pointer;
+                height: 25px;
+            }
+            #container .menu{
+                display: none;
+            }
+            #container .menu li{
+                cursor: pointer;
+                height: 21px;
+            }
+            #container .menu li:hover{
+                background: #cccccc;
+            }
+        </style>
+        <script>//后执行
+            //window.onload=function(){};
+        </script>
+    </head>
+    <body>
+            <ul id="container">
+                <li>
+                    <h3>动漫</h3>
+                    <ul class="menu">
+                        <li>一人之下</li>
+                        <li>全职高手</li>
+                        <li>快把我哥带走</li>
+                    </ul>
+                </li>
+                <li>
+                    <h3>音乐</h3>
+                    <ul class="menu">
+                        <li>Shape of you</li>
+                        <li>We don't talk anymore</li>
+                        <li>Half and half</li>
+                    </ul>
+                </li>
+            </ul>
+        <script>//先执行,加载完标签
+            var oContainer=document.getElementById("container");
+            var aH3=oContainer.getElementsByTagName("h3");
+            var aUl=oContainer.getElementsByTagName("ul");
+        console.log(aUl);
+        console.log(aH3);
+            for(var i=0;i<aH3.length;i++){
+                aH3[i].index=i;
+                aH3[i].onclick=function(){
+                    if(aUl[this.index].style.display!="block"){
+                        aUl[this.index].style.display="block";
+                    }
+                    else{
+                        aUl[this.index].style.display="none";
+                    }
+                };
+            }
+        </script>
+    </body>
 </html>
