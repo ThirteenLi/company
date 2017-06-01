@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>选项卡</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        img{
+            border:0;
+        }
+        a{
+            text-decoration: none;
+        }
+        #container{
+            width: 400px;
+            height: 200px;
+            /*background: #ff0000;*/
+            margin: 100px auto;
+        }
+        #tabs{
+            overflow: hidden;
+            border-bottom: 1px solid #000;
+        }
+        #tabs li{
+            background: #cccccc;
+            height: 30px;
+            width: 120px;
+            float: left;
+            margin-right: 5px;
+            text-align: center;
+            line-height: 30px;
+        }
+        #contents{
+            height: 170px;
+            background: #cccccc;
+        }
+        #tabs .selected{
+            background: #000;
+            color:white;
+        }
+        #contents div{
+            display: none;
+        }
+        #contents .selected{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <ul id="tabs">
+        <li class="selected">html</li>
+        <li>css</li>
+        <li>js</li>
+    </ul>
+    <div id="contents">
+        <div class="selected">001</div>
+        <div>002</div>
+        <div>003</div>
+    </div>
+</div>
+<script>
+    var oTab=document.getElementById("tabs");
+    var aLi=document.getElementsByTagName("li");
+    var oContents=document.getElementById("contents");
+    console.log(oContents.childNodes);
+    console.log(oContents.children);//非官方，无兼容性问题，只找元素
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].index=i;
+        aLi[i].onclick=function(){
+            for(var i=0;i<aLi.length;i++){
+                aLi[i].className="";
+                oContents.children[i].className="";
+            }
+            this.className="selected";
+            oContents.children[this.index].className="selected";
+        };
+    }
+
+</script>
+</body>
+</html>
