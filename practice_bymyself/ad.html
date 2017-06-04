@@ -17,7 +17,11 @@
             }
             #container{
                 width: 190px;
+                display:none;
                 border: 1px solid #000000;
+                position: absolute;
+                top:0;
+                left:0;
             }
             #container h3{
                 background: #000;
@@ -75,6 +79,13 @@
                         aUl[this.index].style.display="none";
                     }
                 };
+            }
+            document.oncontextmenu= function (e) {
+                e=e||window.event;
+                oContainer.style.top= e.clientY+"px";
+                oContainer.style.left= e.clientX+"px";
+                oContainer.style.display="block";
+                return false;
             }
         </script>
     </body>
