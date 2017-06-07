@@ -44,12 +44,14 @@
     var oDiv1=document.getElementById("div1");
     var oStart=document.getElementById("start");
     var timer;
+    var speed;
     console.log(oDiv1);
     oStart.onclick=function(){
         timer=setInterval(function(){
-            oDiv1.style.left=8+oDiv1.offsetLeft+"px";
-            if(800-oDiv1.offsetLeft<8){
-                oDiv1.style.left=800+"px";
+            speed=Math.floor((800-oDiv1.offsetLeft)*0.1+1);
+            oDiv1.style.left=speed+oDiv1.offsetLeft+"px";
+            if(800-oDiv1.offsetLeft<speed) {
+                oDiv1.style.left = 800 + "px";
                 clearInterval(timer);
             }
         },30);
