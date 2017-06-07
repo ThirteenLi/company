@@ -3,8 +3,59 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #start{
+            color:#000000;
+            background: #cccccc;
+            width: 50px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #ff0000;
+            position: relative;
+            top:0;
+            left:0;
+        }
+        #div2{
+            border-left: 1px solid #000000;
+            height:400px;
+            position: absolute;
+            left:800px;
+            top:30px;
+        }
+
+    </style>
 </head>
 <body>
+<div id="start">开始</div>
+<div id="div1"></div>
+<div id="div2"></div>
+<script>
+    var oDiv1=document.getElementById("div1");
+    var oStart=document.getElementById("start");
+    var timer;
+    console.log(oDiv1);
+    oStart.onclick=function(){
+        timer=setInterval(function(){
+            oDiv1.style.left=8+oDiv1.offsetLeft+"px";
+            if(800-oDiv1.offsetLeft<8){
+                oDiv1.style.left=800+"px";
+                clearInterval(timer);
+            }
+        },30);
+    };
 
+
+</script>
 </body>
 </html>
