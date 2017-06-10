@@ -2,9 +2,144 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>课堂练习轮播图</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        img{
+            border:0;
+        }
+        a{
+            text-decoration: none;
+        }
+        li{
+            list-style: none;
+        }
+        #container{
+            position: relative;
+            width: 256px;
+            height: 291px;
+        }
+        #pic
+        {
+            border:3px solid #414b4a;
+            width: 250px;
+            height: 285px;
+            overflow: hidden;
+        }
+        #pic .select{
+            display:block;
+        }
+        #pic img{
+            display:none;
+        }
+        #num{
+            position: absolute;
+            bottom:10px;
+            right:10px;
+        }
+        #num li{
+            float: left;
+            background: #000;
+            color:#ffffff;
+            margin-left: 5px;
+            cursor:pointer;
+        }
+        #num .select{
+            background: #66ccff;
+            color: #000;
+        }
+        #turn{
+           position: absolute;
+            bottom:10px;
+            left:5px;
+        }
+        #turn div{
+            float: left;
+            margin-right: 5px;
+            background: #000;
+            color:#ffffff;
+            cursor:pointer;
+        }
+
+    </style>
 </head>
 <body>
+<div id="container">
+    <div id="pic">
+        <img src="img/c2.jpg" alt="" class="select"/>
+        <img src="img/c3.jpg" alt=""/>
+        <img src="img/c4.jpg" alt=""/>
+        <img src="img/c5.jpg" alt=""/>
+        <img src="img/c6.jpg" alt=""/>
+    </div>
+    <ul id="num">
+        <li class="select">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+    </ul>
+    <div id="turn">
+        <div id="left">&lt;</div>
+        <div id="right">&gt;</div>
+    </div>
 
+</div>
+<script>
+    var oContainer=document.getElementById("container");
+    var oPic=document.getElementById("pic");
+    var aImg=oPic.getElementsByTagName("img");
+    var oNum=document.getElementById("num");
+    var aLi=oNum.getElementsByTagName("li");
+    var oLeft=document.getElementById("left");
+    var oRight=document.getElementById("right");
+    var now_index=0;
+    var timer;
+    function change(n){
+        for(var i=0;i<aLi.length;i++){
+            aLi[i].className="";
+            aImg[i].className="";
+        }
+        aImg[n].className="select";
+        aLi[n].className="select";
+        now_index=n;
+    }
+    function play(){
+        timer=setInterval("oRight.onclick()",1000);
+    }
+    for(var i=0;i<aLi.length;i++){
+        aLi[i].index=i;
+        aLi[i].onclick=function(){
+            change(this.index);
+        };
+    }
+    oLeft.onclick=oRight.onclick=function(){
+        if(this==oLeft){
+            now_index--;
+        }else{
+            now_index++;
+        }
+        if(now_index==-1){
+            now_index=4;
+        }
+        if(now_index==5){
+            now_index=0;
+        }
+        change(now_index);
+    };
+    play();
+    oContainer.onmouseover=function(){
+        clearInterval(timer);
+    };
+    oContainer.onmouseout=function(){
+        play();
+    };
+    oContainer.onselectstart=function(){
+        return false;
+    }
+</script>
 </body>
 </html>
