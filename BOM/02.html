@@ -3,8 +3,66 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #div1{
+            height: 20px;
+            width: 500px;
+            margin: 100px auto;
+            background: #ffffff;
+            border:4px solid #000;
+        }
+        #div2{
+            width:0;
+            height: 100%;
+            background: #000;
+        }
+        #div3{
+            width: 60px;
+            height: 60px;
+            margin: 100px auto;
+            border-radius: 50%;
+            color:#ffffff;
+            background: #000;
+            line-height: 60px;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+<div id="div1">
+    <div id="div2"></div>
+</div>
+<div id="div3">return</div>
+<script>
+    var oDiv2=document.getElementById("div2");
+    console.log(oDiv2.offsetWidth);
+    var timer=setInterval(function(){
 
+        if(oDiv2.offsetWidth!=500){
+            oDiv2.style.width=oDiv2.offsetWidth+2+"px";
+            console.log(1);
+        }else{
+            clearInterval(timer);
+        }
+    },30);
+    var oDiv3=document.getElementById("div3");
+    oDiv3.onclick=function(){
+        oDiv2.style.width=0;
+        clearInterval(timer);
+         timer=setInterval(function(){
+
+            if(oDiv2.offsetWidth!=500){
+                oDiv2.style.width=oDiv2.offsetWidth+2+"px";
+                console.log(1);
+            }else{
+                clearInterval(timer);
+            }
+        },30);
+    };
+</script>
 </body>
 </html>
