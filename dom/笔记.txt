@@ -1,0 +1,18 @@
+offsetTop,offsetLeft   距离自己最近的被定位的祖先元素
+事件冒泡    从事件源开始，逐层往外传播
+addEventListener添加绑定事件，三个参数，第一个事件类型(不写on)，第二个方法，
+第三个布尔型默认值false 事件冒泡
+                   true 事件捕获（事件冒泡反向）
+                   先捕获后冒泡！！！
+this指向对象
+有兼容性问题
+e.stopPropagation();停止传播，阻止事件冒泡
+
+IE方法
+attachEvent(事件类型，事件处理函数)只支持IE
+事件执行顺序覆盖（与绑定顺序相反）
+this指向window
+ 早期只支持事件冒泡，不支持事件捕获
+ window.event.cancelBubble=true;阻止事件冒泡
+ var target=e.target||window.event.srcElement;获取事件源
+ 事件代理/事件委托:利用事件冒泡把子元素同一事件委托给父元素绑定

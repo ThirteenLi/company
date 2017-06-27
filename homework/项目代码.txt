@@ -1,0 +1,434 @@
+1.logon-back
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		<title>logon</title>
+	</head>
+	<body>
+		<table width="1280" height="872" border="0" align="center" background="picture/登录界面.jpg">
+			<tr><td>
+					<table width="100" height="10" border="1" 
+
+
+cellpadding="6" style="margin:0 0 25% 80%">
+					<form action="1.logon-back.jsp" method="GET">
+							<tr>
+								<td><font size="5">用户名:</font></td>
+								<td><input type="text" name="user_name"></td>
+							</tr>
+							<tr>
+							    <td><font size="5">密码:</font></td>
+							    <td><input type="password" name="password"></td>
+							</tr>
+							<tr>
+								<td><input type="submit" value="确定"></td>
+								<td><input type="reset" value="撤销"></td>
+							</tr>
+					</form>
+					</table>
+			</td></tr>
+		</table>
+	</body>
+</html>
+
+2.logon
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>logon-background</title>
+</head>
+		<body>
+		<%
+		    String user_name=request.getParameter("user_name");
+			String password = request.getParameter("password");
+			if (user_name.equals("Daddy")&&password.equals("532070983"))
+			{
+		%>			
+		
+ <table with="200" height="100" border="0" align="center">
+		       <tr>
+		           <td><font size="5">看.够.了.吗？！</font><td>
+			       <td><input type="button" value="嗯，看够了" onClick="location.href='2.menu.jsp'"></td>
+			       <td><input type="button" value="不，没看够" ></td>
+		       </tr>
+		       </table>
+		       <table width="700" height="650" border="0" align="center" background="picture/20130713123546_TKBcM.thumb.700_0.jpg"></table>
+		<%
+			}
+			else{
+		%>
+				<jsp:forward page="1.logon.jsp"></jsp:forward>	
+		<% 	
+			}	
+		%>
+		</body>
+</html>
+
+3.menu
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>menu</title>
+</head>
+		<body>
+				<table width="1366" height="768" border="0" align="center" background="picture/新主菜单.jpg">
+						<tr>
+						<table border="0" style="margin:-20% 0 0 45%" cellpadding="6">		<%/*margin 上 右 下 左 ？？？*/ %>
+								
+								    <tr><td><input type="button" value="1.添加信息" onClick="location.href='3.add.jsp'"></td></tr>
+								    <tr><td><input type="button" value="3.修改信息" onClick="location.href='4.modify.jsp'"></td></tr>
+									<tr><td><input type="button" value="2.
+
+查看信息" onClick="location.href='5.check.jsp'"></td></tr>
+									<tr><td><input type="button" value="4.删除信息" onClick="location.href='6.delete.jsp'"></td></tr>
+									<td><input type="button" value="5.登录界面" onClick="location.href='1.logon.jsp'"></td>
+								</tr>
+						</table>
+						</tr>
+				</table>
+		</body>
+</html>
+
+4.add-back
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>add</title>
+</head>
+		<body>
+				<table border="0" width="687" height="711" align="center" background="picture/增添.jpg">
+						<tr>
+							<table width="200" height="100" border="0" style="margin:-20% 0 0 18%" cellpadding="10">
+							<tr><form action="3.add-back.jsp" method="GET">
+								<tr>
+									<td>型号：</td>
+									<td><input type="text" name="number"></td>
+								</tr>
+								
+								<tr>
+								    <td>高度：</td>
+								    <td><input type="text" name="height"></td>
+								</tr>
+								<tr>
+								    <td>生产年份：</td>
+								    
+<td><input type="text" name="year"></td>
+								</tr>
+								
+								<tr>
+								    <td>国籍：</td>
+								    <td><input type="text" name="nation"></td>
+								</tr>
+								
+								<tr>
+								    <td>是否量产：</td>
+								    <td><input type="text" name="amount"></td>
+								</tr>
+								
+								<tr>
+								    <td><input type="submit" value="确定"></td>
+								    <td><input type="reset" value="撤销"> </td>
+								</tr>
+								
+								<tr><td><input type="button" value="返回主菜单" onClick="location.href='2.menu.jsp'"></td></tr>
+								</table></tr>
+							</form>
+							
+						</tr>
+						
+				</table>
+		</body>
+</html>
+
+5.add
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@page import="java.sql.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>add-back</title>
+
+</head>     
+		<body>
+				<%
+				   String number=request.getParameter("number");
+				   String add_number=new String (number.getBytes("ISO8859_1"),"UTF-8");
+				 
+				   String height=request.getParameter("height");
+				   float add_height=Float.parseFloat(height);
+				   
+				   String year=request.getParameter("year");
+				   int add_year=Integer.parseInt(year);
+				   
+				   String nation=request.getParameter("nation");
+				   String add_nation=new String (nation.getBytes("ISO8859_1"),"UTF-8");
+				   
+				   String amount=request.getParameter("amount");
+				   String add_amount=new String (amount.getBytes("ISO8859_1"),"UTF-8");
+				   /////////////////////////////////////////////////////////////////////
+				   try
+				   {
+					   Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance(); 
+						String url="jdbc:sqlserver://localhost:1433;database=Gundam"; //Gundam 数据库名
+						String password="SOS1304021616SOS";  
+						String user="sa"; 
+						Connection dbConn=DriverManager.getConnection(url,user,password);
+						PreparedStatement stmt=dbConn.prepareStatement("insert into gundam values(?,?,?,?,?)");
+						
+						stmt.setString(1,add_number);
+						stmt.setDouble(2,add_height);
+						stmt.setInt(3,add_year);
+						stmt.setString(4,add_nation);
+						stmt.setString(5,add_amount);
+						stmt.executeUpdate();
+						
+						
+				   }
+				   catch(Exception e)
+				   {
+					   System.out.println("数据库连接失败");
+				   }
+				%>
+			
+				<table align="center" border="0" width="794" height="468" background="picture/增添成功.jpg"></table>
+				
+				<table border="0" width="100" height="50" align="center">
+					<tr>
+						<td><input type="button" value="返回主菜单" onClick="location.href='2.menu.jsp'"></td>
+						<td><input type="button" value="继续增添" onClick="location.href='3.add.jsp'"></td>
+					</tr>
+				</table>
+			
+		</body>
+</html>
+
+6.modify-back
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>modify</title>
+</head>
+		<body>
+			<table border="0" width="1366" height="768" align="center" background="picture/修改页面.jpg">
+				<tr>
+				<table border="0" width="400" height="200" style="margin:-20% 0 0 55%">
+					<tr><form action="4.modify-back.jsp" method="get">
+		                 <tr>
+		                 <td>型号：</td><td><input type="text" name="number"></td></tr>
+		                 
+<tr><td>高度：</td><td><input type="text" name="height"></td></tr>
+		                 <tr><td>生产年份：</td><td><input type="text" name="year"></td></tr>
+		                 <tr><td>国籍：</td><td><input type="text" name="nation"></td></tr>
+		                 <tr><td>是否量产：</td><td><input type="text" name="amount"></td></tr>
+		                 <tr>
+		                 <td><input type="submit" value="确定"></td>
+		                 <td><input type="reset" value="重置"></td>
+		                 </tr>
+		            </form></tr>
+		            <tr><td><input type="button" value="返回主菜单" onClick="location.href='2.menu.jsp'"></td></tr>
+		            </table>
+				</tr>
+			</table>
+		</body>
+</html>
+
+7.modify
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+    <%@page import="java.sql.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>modify-back</title>
+</head>
+	<body>
+	
+		<%                      
+		   String number=request.getParameter("number");
+		   String modify_number=new String (number.getBytes("ISO8859_1"),"UTF-8");
+		 
+		   String height=request.getParameter("height");
+		   float modify_height=Float.parseFloat(height);
+		   
+		   String year=request.getParameter("year");
+		   int modify_year=Integer.parseInt(year);
+		   
+		   String nation=request.getParameter("nation");
+		   String modify_nation=new String (nation.getBytes("ISO8859_1"),"UTF-8");
+		   
+		   String amount=request.getParameter("amount");
+		   String modify_amount=new String (amount.getBytes("ISO8859_1"),"UTF-8");
+		   
+		   ////////////////////////////////////////////////////////////////////////////////
+			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance(); 
+			String url="jdbc:sqlserver://localhost:1433;database=Gundam"; //Gundam 数据库名
+			String password="SOS1304021616SOS";  
+			String user="sa"; 
+			Connection dbConn=DriverManager.getConnection(url,user,password);
+			//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+			try{
+			PreparedStatement stmt1=dbConn.prepareStatement("update gundam set height=?,year=?,nation=?,amount=? where number=?");
+				stmt1.setDouble(1,modify_height);
+				stmt1.setInt(2,modify_year);
+				stmt1.setString(3,modify_nation);
+				stmt1.setString(4,modify_amount);
+				stmt1.setString(5,modify_number);
+				stmt1.executeUpdate();
+			}
+			catch(Exception e)
+			{
+				out.println("信息修改出错");
+			}
+			
+			///////////////////////////////////////////////////////////////////////////////////////////////	
+			%>
+			
+<table border="0" width="794" height="468" align="center" background="picture/修改.jpg"></table>
+			<table align="center">
+				<td><input type="button" value="返回主菜单" onClick="location.href='2.menu.jsp'"></td>
+				<td><input type="button" value="查看页面" onClick="location.href='5.check.jsp'"></td>
+			
+			</table>
+	</body>
+</html>
+
+8.check
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+    <%@page import="java.sql.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>check</title>
+</head>
+		<body>
+		<table border="0" width="640" height="768" align="center" background="picture/1447050771952.jpeg">
+		
+		<tr><td><table border="2" width="400" height="50" style="margin:35% 0 0 23%">
+			<%	
+					Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance(); 
+					String url="jdbc:sqlserver://localhost:1433;database=Gundam"; //Gundam 数据库名
+					String password="SOS1304021616SOS";  
+					String user="sa"; 
+					Connection dbConn=DriverManager.getConnection(url,user,password);
+					PreparedStatement stmt=dbConn.prepareStatement("select * from gundam ");
+					
+					
+ResultSet aa=stmt.executeQuery();
+				%>
+					<tr>
+					     <td>型号</td><td>高度</td><td>生产年份</td><td>国籍</td><td>是否量产</td>
+					</tr>
+					<tr>
+				<%
+					
+					while(aa.next())
+					{
+				%>
+				        <tr>
+						<td><% out.print(aa.getString(1));%></td>
+		  				<td><%out.print(aa.getFloat(2));%></td>
+		  				<td><%out.print(aa.getInt(3));%></td>
+		  				<td><%out.print(aa.getString(4));%></td>
+		  				<td><%out.print(aa.getString(5));%></td>
+		  				</tr>
+			   <%
+					}
+			   %>
+			        </tr>     
+			</table></td></tr>
+			<tr><td><table align="center">
+			          <tr><td><input type="button" value="返回主菜单" onClick="location.href='2.menu.jsp'"></td></tr>
+			</table></td></tr>
+			</table>
+		</body>
+</html>
+
+9.delete-back
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>delete</title>
+</head>
+	<body>
+		
+<table border="0" width="1366" height="768" align="center" background="picture/删除页面.jpg">
+		    <tr><table border="0" width="200" height="150" style="margin:-15% 0 0 36%">
+		    <form action="6.delete-back.jsp" method="get">
+		    <td>输入你要删除的型号：</td>
+		    <td><input type="text" name="number"></td>
+		    </td></tr>
+		    <tr>
+		    <td><input type="submit" value="确定"></td>
+		    <td><input type="reset"  value="重置"></td>
+		    </tr>
+		    </form>
+		    <tr><td><input type="button" value="返回主菜单" onClick="location.href='2.menu.jsp'"></td></tr>
+		    </table></tr>
+		</table>
+	</body>
+</html>
+
+10.delete
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+      <%@page import="java.sql.*" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Insert title here</title>
+</head>
+	<body>
+	<%
+	String number=request.getParameter("number");
+	String delete_number=new String (number.getBytes("ISO8859_1"),"UTF-8");
+	///////////////////////////////////////////////////////////////////////////
+	Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver").newInstance(); 
+	String url="jdbc:sqlserver://localhost:1433;database=Gundam"; //Gundam 数据库名
+	String password="SOS1304021616SOS";  
+	
+String user="sa"; 
+	Connection dbConn=DriverManager.getConnection(url,user,password);
+	/////////////////////////////////////////////////////////////////
+	try
+	{
+	PreparedStatement stmt=dbConn.prepareStatement("delete from gundam where number=?");
+	stmt.setString(1,delete_number);
+	stmt.executeUpdate();
+	}
+	catch(Exception e)
+	{
+		out.println("删除失败");
+	} 
+	%>
+	<table border="0" width="794" height="468" background="picture/删除.jpg" align="center"></table>
+	<table align="center">
+	<tr>         
+				<td><input type="button" value="1.返回主菜单" onClick="location.href='2.menu.jsp'"></td>
+				<td><input type="button" value="2.查看" onClick="location.href='5.check.jsp'"></td>
+	</tr></table>
+	</body>
+</html>

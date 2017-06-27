@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>黑龙江大学</title>
+    <link rel="shortcut icon" href="../homework/img/favicon.ico" />
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            list-style: none;
+        }
+        .wrapper{
+            width: 1040px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        body,html{
+            height: 100%;
+        }
+        #header{
+            background: url("../homework/img/city.jpg") no-repeat center;
+            height: 100%;
+            text-align: center;
+            overflow: hidden;
+        }
+        #header h1{
+            margin-top: 20px;
+            margin-bottom: 100px;
+            font-size: 40px;
+            color: #000;
+        }
+        #move li{
+            width: 120px;
+            height: 120px;
+            color:#ff0000;
+            background: #6cf;
+            float: left;
+            text-align: center;
+            line-height: 120px;
+            margin: 5px;
+            font-size: 50px;
+            border-radius: 50%;
+        }
+        #move{
+            width: 1040px;
+            position: relative;
+            left:0;
+        }
+    </style>
+</head>
+    <body>
+        <div id="header">
+            <div class="wrapper">
+                <h1>黑龙江大学</h1>
+                    <ul id="move">
+                        <li>黑</li>
+                        <li>龙</li>
+                        <li>江</li>
+                        <li>大</li>
+                        <li>学</li>
+                        <li>欢</li>
+                        <li>迎</li>
+                        <li>你</li>
+                    </ul>
+            </div>
+        </div>
+    </body>
+<script>
+    var oMove=document.getElementById("move");
+    var aLi=oMove.getElementsByTagName("li");
+    oMove.innerHTML+=oMove.innerHTML;
+    oMove.style.width=oMove.offsetWidth*2+"px";
+    timer=setInterval(function(){
+        oMove.style.left=oMove.offsetLeft-5+"px";
+        if(-oMove.offsetLeft>=oMove.offsetWidth/2){
+            oMove.style.left=0;
+        }
+    },50);
+</script>
+</html>
