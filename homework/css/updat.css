@@ -1,0 +1,78 @@
+body{
+    background: #000;
+}
+#middle{
+    width: 500px;
+    margin: 20px auto 0;
+    position: relative;
+
+}
+#middle ul{
+    opacity: 0;
+    border-radius: 30px;
+    background: #655c5c;
+}
+#middle li p,#middle li span{
+    color:#000;
+    font-size: 20px;
+    cursor:pointer;
+}
+#middle li p,#middle li input[type="text"]{
+    width: 100%;
+}
+#middle li{
+    margin: 0 auto;
+    width: 250px;
+}
+#middle li input[type="text"]{
+    text-indent: 5px;
+    height: 20px;
+    border-color:#000000;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+#middle input{
+    outline: none;
+}
+#middle li .btn{
+    width: 52px;
+    height: 28px;
+    border-radius:5px;
+    background: #000;
+    border:0;
+    color:#fff;
+    outline: none;
+    margin: 10px 30px 10px 0;
+    font-size: 18px;
+}
+#middle li .btn:hover{
+    background: #ffffff;
+    color:#000;
+    border:2px solid #000;
+}
+#left,#right{
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top:0;
+    /*display:none;*/
+}
+#left{
+    left:0;
+}
+#right{
+    right:0;
+}
+#left img,#right img{
+    width: 200%;
+    height: 100%;
+}
+#left img{
+    position: absolute;
+    left:7px;
+}
+#right img{
+    position: absolute;
+    right:-7px;
+}
