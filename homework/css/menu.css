@@ -97,3 +97,7 @@
     width: 100%;
     overflow: hidden;
 }
+#box .text{
+    overflow: hidden;
+    width: 100%;
+}

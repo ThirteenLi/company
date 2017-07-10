@@ -20,6 +20,12 @@
     var oMask=id("mask");
     oDrag.style.width=oBig.offsetWidth*((oEye.offsetWidth-6)/Eyeimg.offsetWidth)+"px";
     oDrag.style.height=oBig.offsetHeight*((oEye.offsetHeight-6)/Eyeimg.offsetHeight)+"px";
+   console.log(oBig.offsetWidth);
+   console.log(oEye.offsetWidth);
+   console.log(Eyeimg.offsetWidth);
+   console.log(oBig.offsetHeight);
+   console.log(oEye.offsetHeight);
+   console.log(Eyeimg.offsetHeight);
     for(var i=0;i<aSmall_pic.length;i++){
         aSmall_pic[i].index=i;
         aSmall_pic[i].onclick=function(){

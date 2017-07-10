@@ -1,6 +1,4 @@
-
-/**************/
-#login-form form{
+#register-form form{
     margin: 0 auto;
     border-radius: 10px;
     width: 250px;
@@ -11,12 +9,12 @@
     padding-left: 30px;
     background: #655c5c;
 }
-#login-form form h3{
-    margin-bottom:10px;
+#register-form form h3{
+    margin-bottom:6px;
     width: 100%;
     color:#000;
 }
-#login-form form .print{
+#register-form form .print{
     text-indent: 5px;
     border-color:#000000;
     border-radius: 5px;
@@ -24,7 +22,7 @@
     height: 20px;
     margin-bottom: 15px;
 }
-#login-form form .btn{
+#register-form form .btn{
     width: 40px;
     height: 25px;
     border-radius:5px;
@@ -34,16 +32,7 @@
     color:#fff;
     outline: none;
 }
-#login-form .btn a{
-    color:white;
-    height:100%;
-    width: 100%;
-    display: block;
-}
-#login-form .btn a:hover{
-    color:#f00;
-}
-#login-form div.btn{
+#register-form div.btn{
     width: 150px;
     height: 40px;
     margin: 20px auto;
@@ -55,26 +44,6 @@
     border-radius: 50%;
     cursor: pointer;
 }
-#login-form div.btn:hover{
+#register-form div.btn:hover{
     color:#f00;
 }
-#login-form form a{
-    position: absolute;
-    bottom:5px;
-    right:0;
-    color:#fff;
-    text-decoration: underline;
-    font-size: 15px;
-}
-
-
-
-
-
-
-
-
-
-
-
-

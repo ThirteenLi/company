@@ -2,10 +2,9 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>模型管理系统</title>
     <link rel="shortcut icon" href="img/favicon.ico" />
     <link rel="stylesheet" href="css/common.css"/>
-    <link rel="stylesheet" href="css/login.css"/>
+    <link rel="stylesheet" href="css/register.css"/>
 </head>
 <body>
 <div id="title">
@@ -20,7 +19,6 @@
         </ul>
     </div>
 </div>
-
 <div id="header">
     <div class="wrapper">
         <div id="container">
@@ -39,28 +37,29 @@
         </div>
     </div>
 </div>
-
-<div id="login-form">
+<div id="register-form">
     <div class="wrapper">
-        <div class="btn">VIP登录</div>
+        <div class="btn">用户注册</div>
         <form>
-            <h3>用户名</h3>
+            <h3>请输入你的用户名</h3>
             <input type="text" name="user_name" class="print"/><br/>
-            <h3>密码</h3>
+            <h3>请输入密码</h3>
+            <input type="password" name="password" class="print"/><br/>
+            <h3>请再次输入密码</h3>
             <input type="password" name="password" class="print"/><br/>
             <input type="submit" value="确定" class="btn"/>
             <input type="reset" value="撤销" class="btn"/>
-            <a href="">忘记密码？</a>
         </form>
-        <div class="btn"><a href="register.html">加入我们</a></div>
+        <div class="btn" id="back">返回</div>
     </div>
 
 </div>
+
 <div id="footer">
     <p>制作人：郭云亮&ensp;海栋&ensp;纪喜文&ensp;巨延生&ensp;李宏磊&ensp;李桦杰</p>
 </div>
 <script src="javascript/wichung-1.0.js"></script>
 <script src="javascript/common.js"></script>
-<script src="javascript/login.js"></script>
+<script src="javascript/register.js"></script>
 </body>
 </html>
