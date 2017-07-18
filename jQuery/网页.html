@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        td{
+            width: 150px;
+            height: 30px;
+            text-align: left;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <table id="nav" border="1">
+        <tr>
+            <td>学号</td>
+            <td>姓名</td>
+        </tr>
+        <tr>
+            <td>1514010912</td>
+            <td>李宏磊</td>
+        </tr>
+        <tr>
+            <td>1514010913</td>
+            <td>李承磊</td>
+        </tr>
+        <tr>
+            <td>1514010914</td>
+            <td>李皇磊</td>
+        </tr>
+        <tr>
+            <td>1514010915</td>
+            <td>李律磊</td>
+        </tr>
+        <tr>
+            <td>1514010916</td>
+            <td>李卿磊</td>
+        </tr>
+        <tr>
+            <td>1514010917</td>
+            <td>李澜磊</td>
+        </tr>
+        <tr>
+            <td>1514010918</td>
+            <td>李梓磊</td>
+        </tr>
+    </table>
+    <script src="../jquery-1.11.2.js"></script>
+    <script>
+
+        $(function(){
+            var $nav=$('#nav');
+            $('tr:even',$nav).css('background',"#6cf");
+            $('tr:odd',$nav).css('background',"#cf6");
+           $('td',$nav).on('click',function(e){
+                if($(e.target).has('input').length>0){
+                    return false;
+                }
+                var $input = $("<input type='text'>").val(e.target.innerHTML);
+                $(e.target).empty().append($input);
+                $input.trigger("focus");
+            });
+        });
+    </script>
+</body>
+</html>
