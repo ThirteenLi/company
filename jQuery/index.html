@@ -1,11 +1,11 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Jane shopping</title>
-<link rel="stylesheet" href="styles/reset.css" type="text/css" />
-<link rel="stylesheet" href="styles/main.css" type="text/css" />
-<link rel="stylesheet" href="styles/skin/skin_0.css" type="text/css" id="cssfile" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>my shopping</title>
+	<link rel="stylesheet" href="styles/reset.css" type="text/css" />
+	<link rel="stylesheet" href="styles/main.css" type="text/css" />
+	<link rel="stylesheet" href="styles/skin/skin_0.css" type="text/css" id="cssfile" />
 </head>
 <body>
 <!--头部开始-->
@@ -26,8 +26,8 @@
 		<!-- 导航 start -->
 		<div id="nav" class="mainNav">
 			<ul class="nav">
-				 <li><a href="#">首 页</a></li>
-				 <li><a href="#">品 牌</a>
+				<li><a href="#">首 页</a></li>
+				<li><a href="#">品 牌</a>
 					<div class="jnNav">
 						<div class="subitem">
 							<dl class="fore">
@@ -164,8 +164,8 @@
 							</dl>
 						</div>
 					</div>
-				 </li>
-				 <li><a href="#">鞋包配饰</a></li>
+				</li>
+				<li><a href="#">鞋包配饰</a></li>
 			</ul>
 		</div>
 		<!-- 导航 end -->
@@ -240,8 +240,8 @@
 				<img src="images/ads/4.jpg" alt="男鞋促销第一波"/>
 				<img src="images/ads/5.jpg" alt="春季新品发布"/>
 			</a>
-			<div>
-				<a href="###1"><em>相约情人节</em><em>全场119元起</em></a>
+			<div style="z-index: 6;" id="menu">
+				<a href="###1" class="chos"><em>相约情人节</em><em>全场119元起</em></a>
 				<a href="###2"><em>新款上线</em><em>全场357元起</em></a>
 				<a href="###3"><em>愤怒小鸟特卖</em><em>全场89元</em></a>
 				<a href="###4"><em>男鞋促销第一波</em><em>全场3.1折起</em></a>
@@ -275,7 +275,7 @@
 			<div id="jnBrandTab">
 				<h2 title="品牌活动">品牌活动</h2>
 				<ul>
-					<li><a title="运动" href="#nogo">运动</a></li>
+					<li class="chos"><a title="运动" href="#nogo">运动</a></li>
 					<li><a title="女鞋" href="#nogo">女鞋</a></li>
 					<li><a title="男鞋" href="#nogo">男鞋</a></li>
 					<li><a title="Applife" href="#nogo">童鞋</a></li>
@@ -360,5 +360,10 @@
 <!--底部开始-->
 <div id="footer">Copyright &copy; 2009 - 2012 JaneShop Inc. </div>
 <!--底部结束-->
+
+
+<script src="scripts/jquery-1.11.2.js"></script>
+<script src="scripts/tooltip.js"></script>
+<script src="scripts/index.js"></script>
 </body>
 </html>
