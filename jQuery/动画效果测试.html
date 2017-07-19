@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 200px;
+            height: 200px;
+            background: #6cf;
+        }
+    </style>
+</head>
+<body>
+<button id="hide">hide/show</button>
+<button id="click1">click1</button>
+<button id="click2">click2</button>
+    <div id="div1"></div>
+
+    <script src="../jquery-1.11.2.js"></script>
+    <script src="../jquery.easing.1.3.js"></script>
+    <script>
+        var $div=$('#div1');
+        $('#hide').on('click',function(){
+            $div.stop().toggle(1000);
+        });
+        $('#click1').on('click',function(){
+           $div.stop().animate({
+               width:1000
+           },2000,"easeInExpo");
+        });
+        $('#click2').on('click',function(){
+            $div.stop().animate({
+                width:200
+            },2000,"easeInSine");
+        });
+    </script>
+</body>
+</html>
