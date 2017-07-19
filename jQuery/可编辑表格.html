@@ -58,15 +58,24 @@
             var $nav=$('#nav');
             $('tr:even',$nav).css('background',"#6cf");
             $('tr:odd',$nav).css('background',"#cf6");
-           $('td',$nav).on('click',function(e){
-                if($(e.target).has('input').length>0){
+            $('#nav td').on('click',function(e) {
+                if ($(e.target).has('input').length > 0) {
                     return false;
                 }
                 var $input = $("<input type='text'>").val(e.target.innerHTML);
                 $(e.target).empty().append($input);
                 $input.trigger("focus");
             });
-        });
+
+
+                $('#nav td').on('focusout',function(e){//可以冒泡
+
+                        this.innerHTML= e.target.value;
+
+
+                });
+            });
+
     </script>
 </body>
 </html>
