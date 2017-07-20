@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #left,#right,#center{
+            height: 300px;
+        }
+        #left{
+            background: #ff0000;
+            /*-webkit-box-flex: 1;*/
+            width: 300px;
+            margin-right: 100px;
+        }
+        #right{
+            background: #00ff00;
+            -webkit-box-flex: 1;
+            width: 0;
+        }
+        #center{
+            background: #0000ff;
+            -webkit-box-flex: 1;
+            width: 0;
+
+        }
+        #main{
+            display: -webkit-box;
+        /*分配父元素剩余空间*/
+        }
+    </style>
+</head>
+<body>
+<div id="main">
+    <div id="left"></div>
+    <div id="center">
+        <h1>hello,world!</h1>
+    </div>
+    <div id="right">
+        <h1>haha</h1>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,3 @@
+标准盒模型:width=content
+怪异/混杂盒模型:width=padding+border+content
+IE6之前版本删除DOTYPE开启怪异模式
