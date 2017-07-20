@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .clearfix::after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .float{
+            float: left;
+        }
+        #div1{
+            margin-left: 50px;
+            text-shadow:50px 50px 1px  rgba(60,200,255,1),20px 20px 2px rgba(0, 255, 0, 0.5);
+            width: 300px;
+            height: 200px;
+            background: #ff0000;
+            box-shadow: 10px 10px 20px 20px rgba(0, 255, 0, 0.6);
+        }
+    </style>
+</head>
+<body>
+<div class="clearfix">
+    <div class="float">Hello,World!</div>
+</div>
+
+    <div id="div1">hello,world!</div>
+</body>
+</html>
