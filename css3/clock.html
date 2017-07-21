@@ -14,8 +14,8 @@
         #pointer{
             top:0;
             left:0;
-            width: 500px;
-            height: 500px;
+            width:440px;
+            height: 440px;
             background: transparent;
             position: absolute;
             z-index: 1;
@@ -45,9 +45,8 @@
             position: absolute;
             top:0;
             left:0;
-            width: 500px;
-            height: 500px;
-            background: #6cf;
+            width: 440px;
+            height: 440px;
         }
         #watch_face li{
             transform-origin:0 50%;
@@ -68,8 +67,8 @@
         }
         #container{
             margin: 50px auto;
-            width: 500px;
-            height: 500px;
+            width:440px;
+            height: 440px;
             position: relative;
         }
     </style>
@@ -155,11 +154,16 @@
             for(var i=0;i<aLi.length;i++){
                 aLi[i].style.transform="rotate("+i*6+"deg)";
             }
+            var date=new Date();
+            oSecond.style.transform="rotate("+(date.getSeconds()-15)*6+"deg)";
+            oMinute.style.transform="rotate("+(date.getMinutes()-15)*6+"deg)";
+            var hour12=date.getHours()<12?date.getHours():(date.getHours()-12);
+            oHour.style.transform="rotate("+((hour12-3)*30+(date.getMinutes()/2))+"deg)";
             setInterval(function(){
-                var date=new Date();
+                date=new Date();
                 oSecond.style.transform="rotate("+(date.getSeconds()-15)*6+"deg)";
                 oMinute.style.transform="rotate("+(date.getMinutes()-15)*6+"deg)";
-                var hour12=date.getHours()<12?date.getHours():(date.getHours()-12);
+                hour12=date.getHours()<12?date.getHours():(date.getHours()-12);
                 oHour.style.transform="rotate("+((hour12-3)*30+(date.getMinutes()/2))+"deg)";
             },1000);
         });
