@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #container{
+            perspective: 2000px;
+            perspective-origin: 50% -500px;
+        }
+        #trigrams{
+            transition: all 1s linear;
+            margin: 200px auto;
+            width: 320px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+        }
+        #trigrams img{
+            position: absolute;
+            top:0;
+            left: 0;
+            height: 200px;
+            width: 320px;
+            transition: all 1s linear;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="trigrams">
+
+        </div>
+    </div>
+    <script>
+        var oTrigrams=document.getElementById("trigrams");
+        var count=0;
+        for(var i=0;i<8;i++){
+            var oImg=new Image();
+            oImg.onload=function(){
+                count++;
+                if(count==8){
+                    loadSuccess();
+                }
+            };
+
+            oImg.src="img0"+(i+1)+".jpg";
+            oImg.style.zIndex=8-i;
+            oTrigrams.appendChild(oImg);
+        }
+        function loadSuccess(){
+            var aImg=oTrigrams.getElementsByTagName("img");
+            for(var i=0;i<aImg.length;i++){
+                aImg[i].style.transitionDelay = i*100 + "ms";
+                aImg[i].style.transform="rotateY("+((i+1)*45)+"deg) translateZ(450px)";
+            }
+        }
+        var num = 0;
+        oTrigrams.onclick = function(){
+            num++;
+            oTrigrams.style.transform = "rotateY("+ num * 45+"deg)";
+        };
+    </script>
+</body>
+</html>
