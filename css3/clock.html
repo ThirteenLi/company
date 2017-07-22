@@ -27,17 +27,19 @@
             left:50%;
         }
         #second_hand{
-            background: red;
+            background: #0018af;
             width: 150px;
+            z-index: 2;
             transform-origin:0 50%;
         }
         #minute_hand{
-            background: #000;
+            background: #00f;
             width: 110px;
+            z-index: 1;
             transform-origin:0 50%;
         }
         #hour_pointer{
-            background: #000;
+            background: #6cf;
             width: 75px;
             transform-origin:0 50%;
         }
@@ -55,21 +57,24 @@
             left:50%;
             height: 5px;
             width: 200px;
-            background: #6cf;
-            border-right: 20px solid #000000;
+            border-right: 20px solid #6cf;
         }
         #watch_face .longer{
             width: 180px;
-            border-right: 40px solid #000000;
-        }
-        #watch_face li:not(.longer){
-
+            border-right: 40px solid #00f;
         }
         #container{
             margin: 50px auto;
             width:440px;
             height: 440px;
             position: relative;
+        }
+        #container img{
+            position:absolute;
+            top:0;
+            left:0;
+            width: 442px;
+            height: 442px;
         }
     </style>
 </head>
@@ -80,6 +85,7 @@
         <div id="minute_hand"></div>
         <div id="hour_pointer"></div>
     </div>
+    <img src="鹿鹿.svg" alt=""/>
 <ul id="watch_face">
     <li class="longer"></li>
     <li></li>
