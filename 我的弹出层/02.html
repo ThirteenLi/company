@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>我的小店</title>
+
     <style>
         *{
             margin: 0;
@@ -280,8 +276,8 @@
             text-decoration: underline;
         }
     </style>
-</head>
-<body>
+
+
 
 <div id="header">
     <div class="wrapper">
@@ -309,7 +305,7 @@
         </div>
         <ul id="nav">
             <li class="selected">
-                <a href="index.html">首页</a>
+                <a href="../index.html">首页</a>
             </li>
             <li  id="makeup">
                 <a href="">美妆商城</a>
@@ -466,39 +462,4 @@
         <span id="foot">我的小店Copyright ? 2017.我的小店</span>
     </div>
 </div>
-<script>
 
-    (function(){//函数立即调用
-        var oProduct = document.getElementById("product");
-        var aAdd = oProduct.getElementsByTagName("button");
-        var aSpan = oProduct.getElementsByTagName("span");
-        var aPrice = [];//价格
-        var aNum = oProduct.getElementsByTagName("input");//数量
-        var oTotalPrice = document.getElementById("total-price");
-        var oTotalNum = document.getElementById("total-num");
-        var oClearCart = document.getElementById("clear-cart");
-        for(var i=0; i<aSpan.length; i++){
-            if(aSpan[i].className == "price"){
-                aPrice.push(aSpan[i]);
-            }
-        }
-        for(var i=0; i<aAdd.length; i++){
-            aAdd[i].index = i;
-            console.log( oTotalNum.innerHTML);
-            console.log(aNum[this.index].value);
-            aAdd[i].onclick = function(){
-
-                oTotalPrice.innerHTML = parseFloat(oTotalPrice.innerHTML) +  aPrice[this.index].innerHTML * aNum[this.index].value;
-                oTotalNum.innerHTML= parseInt(oTotalNum.innerHTML) + parseInt(aNum[this.index].value);
-            };
-        }
-        oClearCart.onclick = function(){
-            oTotalPrice.innerHTML = "0.00";
-            oTotalNum.innerHTML = "0";
-        };
-    })();
-
-</script>
-
-</body>
-</html>
