@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<h1>Hello,World!</h1>
+<script>
+    var date=new Date();
+    date.setDate(date.getDate()+7);
+    document.cookie="name=lpl";//cookie生命周期 Session(一个会话,关闭浏览器就没有了)
+    document.cookie="age=20;expires="+ date.toUTCString();
+    console.log(document.cookie);
+//    cookie有大小限制4k,有些浏览器限制不能超过20条,不安全的,不该存敏感信息
+    addcookie("school","heida",20);
+    console.log(getcookie("age"));
+    delcookie("name");
+//封装添加cookie方法
+
+    function addcookie(key,val,expires){
+        var str=key+"="+val;
+        if(expires !=undefined){
+            var date=new Date();
+            date.setDate(date.getDate()+expires);
+            str+= ";expires="+date.toUTCString();
+        }
+        document.cookie=str;
+    }
+//封装获取cookie方法
+    function getcookie(key){
+        var cookie=document.cookie.split(";");
+        for(var i=0; i<cookie.length;i++){
+            var arr=cookie[i].split("=");
+            if(arr[0].trim()==key){
+                return arr[i];
+            }
+        }
+    }
+    //删除cookie
+    function delcookie(key){
+        addcookie(key,"",-100);
+    }
+
+</script>
+</body>
+</html>
